@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aarthi ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffe6eb, #ffd1dc);
+    color: #4a2c2a;
+    overflow-x: hidden;
+}
+
+/* Fade Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+}
+
+/* Video Section */
+.video-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff0f5;
+}
+
+.video-section video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Gallery */
+.gallery-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.07);
+}
+
+/* Message Section */
+.message {
+    padding: 60px 20px;
+    background: #ffd6e0;
+    text-align: center;
+}
+
+.message p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Love Button */
+.love-btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #ff4d6d;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(255,77,109,0.6);
+}
+
+.love-btn:hover {
+    background: #e60039;
+    transform: scale(1.1);
+}
+
+/* Floating Petals */
+.petal {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f8c8d8;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero fade-in">
+    <h1>Aarthi ❤️</h1>
+    <p>
+        You are the most beautiful part of my life.  
+        Every moment with you feels warm, peaceful and unforgettable.
+    </p>
+</section>
+
+<section class="video-section fade-in">
+    <h2>Our Special Moment 🎥</h2>
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="gallery-section fade-in">
+    <h2>Memories With You 💕</h2>
+    <div class="gallery">
+        <img src="photo2.jpeg">
+        <img src="photo3.jpeg">
+        <img src="photo4.jpeg">
+        <img src="photo5.jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.10 AM.jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.12 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.12 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.12 AM (3).jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.15 AM.jpeg">
+        <img src="WhatsApp Image 2026-02-13 at 8.38.16 AM (1).jpeg">
+    </div>
+</section>
+
+<section class="message fade-in">
+    <h2>A Message For You 🌹</h2>
+    <p>
+        Aarthi, loving you is the most beautiful journey of my life.
+        You bring light to my darkest days and joy to my simplest moments.
+        I promise to always respect you, support you and stand beside you.
+        You are not just my love — you are my forever.
+    </p>
+
+    <button class="love-btn" onclick="alert('I Love You Forever Aarthi ❤️')">
+        Click Me ❤️
+    </button>
+</section>
+
+<footer>
+    Made with love • For Aarthi • Forever ❤️
+</footer>
+
+<script>
+// Fade in on scroll
+const faders = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+
+// Floating petals
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML = "❤️";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = Math.random() * 5 + 5 + "s";
+    document.body.appendChild(petal);
+    setTimeout(() => { petal.remove(); }, 10000);
+}
+setInterval(createPetal, 500);
+</script>
+
+</body>
+</html>
